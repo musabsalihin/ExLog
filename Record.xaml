@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             x:Class="ExLog.Record"
+             Title="Record">
+
+
+    <Grid RowDefinitions="*">
+        <!--<ScrollView
+                VerticalScrollBarVisibility="Default"> -->
+
+        <VerticalStackLayout
+        Grid.Row="0">
+            <Frame
+            Grid.Column="1"
+            BackgroundColor="White"
+            CornerRadius="0"
+            HorizontalOptions="Fill"
+            BorderColor="Transparent">
+                <Grid ColumnDefinitions="1*,10*,1*">
+                    <Image
+                        Grid.Column="0"
+                        Source="back_icon.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBack" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label 
+                    Grid.Column="1"
+                    Text="Exercise Record"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"
+                    FontFamily="InterSemibold"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    LineHeight="30"
+                    TextColor="#1668EB"/>
+                </Grid>
+            </Frame>
+            <Frame
+            Grid.Column="1"
+            BackgroundColor="#1668EB"
+            CornerRadius="0"
+            HorizontalOptions="Fill"
+            HasShadow="True">
+                <FlexLayout
+                Direction="Row"
+                JustifyContent="Center">
+                    <Image
+                    Grid.Column="0"
+                    x:Name="exerciseIcon"
+                    HorizontalOptions="End"/>
+                    <Label 
+                    Grid.Column="1"
+                    x:Name="exerciseName"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"
+                    FontFamily="InterSemibold"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    LineHeight="0"
+                    TextColor="White"
+                    Padding="5,0"/>
+                </FlexLayout>
+            </Frame>
+            <Frame
+                BorderColor="Gray"
+                CornerRadius="0"
+                Padding="0,10">
+                <Grid
+                    Padding="20,0"
+                    ColumnDefinitions="10*,5*,2*">
+
+                    <Label Grid.Column="0" 
+                           Text="Date"
+                           FontFamily="InterSemibold"
+                           FontSize="16"
+                           LineHeight="22"
+                           FontAttributes="Bold"/>
+                    <Label Grid.Column="1"
+                           Text="Record"
+                           FontFamily="InterSemibold"
+                           FontSize="16"
+                           LineHeight="22"
+                           FontAttributes="Bold"
+                                   HorizontalOptions="Center"/>
+                </Grid>
+            </Frame>
+
+            <CollectionView x:Name="displayER" MaximumHeightRequest="500">
+                <!--<CollectionView.Header>
+                <Frame
+                    BorderColor="Gray"
+                    CornerRadius="0"
+                    Padding="0,10">
+                    <Grid
+                    Padding="20,0"
+                    ColumnDefinitions="10*,5*,2*">
+
+                        <Label Grid.Column="0" 
+                           Text="Date"
+                           FontFamily="InterSemibold"
+                           FontSize="16"
+                           LineHeight="22"
+                           FontAttributes="Bold"/>
+                        <Label Grid.Column="1"
+                           Text="Record"
+                           FontFamily="InterSemibold"
+                           FontSize="16"
+                           LineHeight="22"
+                           FontAttributes="Bold"
+                                   HorizontalOptions="Center"/>
+                    </Grid>
+                </Frame>
+            </CollectionView.Header> -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem 
+                                        Text="Delete"
+                                        IconImageSource="delete_record.png"
+                                        BackgroundColor="Red"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Frame
+                                CornerRadius="0">
+
+                                <Grid
+                            Padding="0,0"
+                            ColumnDefinitions="10*,5*,2*">
+
+                                    <Label Grid.Column="0"  
+                           Text="{Binding Date}"
+                           FontFamily="InterRegular"
+                           FontSize="16"
+                           LineHeight="22"
+                           FontAttributes="None"/>
+                                    <Label Grid.Column="1"
+                           Text="{Binding Record}"
+                           FontFamily="InterRegular"
+                           FontSize="16"
+                           LineHeight="22"
+                           FontAttributes="None"
+                                       HorizontalTextAlignment="Center"/>
+
+                                </Grid>
+                            </Frame>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+        <Button
+        x:Name="CounterBtn"
+        Text="New Record"
+        ImageSource="plus.png"
+        Margin="15,0,15,15"
+        CornerRadius="1000"
+        FontAttributes="Bold"
+        FontSize="20"
+        FontFamily="InterSemibold"
+        Clicked="OnCounterClicked"
+        VerticalOptions="End"
+        HorizontalOptions="Start" />
+    </Grid>
+</ContentPage>

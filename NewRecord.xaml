@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExLog.NewRecord"
+             Title="NewRecord">
+
+    <VerticalStackLayout Grid.Row="0">
+        <Frame
+    Grid.Column="1"
+    BackgroundColor="White"
+    CornerRadius="0"
+    HorizontalOptions="Fill"
+    BorderColor="Transparent">
+            <Grid ColumnDefinitions="1*,10*,1*">
+                <Image
+                Grid.Column="0"
+                Source="back_icon.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBack" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Label 
+                Grid.Column="1"
+                Text="Add New Record"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                FontFamily="InterSemibold"
+                FontSize="24"
+                FontAttributes="Bold"
+                LineHeight="30"
+                TextColor="#1668EB"/>
+            </Grid>
+        </Frame>
+        <Frame
+    Grid.Column="1"
+    BackgroundColor="#1668EB"
+    CornerRadius="0"
+    HorizontalOptions="Fill"
+    HasShadow="True">
+            <FlexLayout
+        Direction="Row"
+        JustifyContent="Center">
+                <Image
+            Grid.Column="0"
+            x:Name="exerciseIcon"
+            HorizontalOptions="End"/>
+                <Label 
+        Grid.Column="1"
+        x:Name="exerciseName"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center"
+        FontFamily="InterSemibold"
+        FontSize="16"
+        FontAttributes="Bold"
+        LineHeight="0"
+        TextColor="White"
+            Padding="5,0"/>
+            </FlexLayout>
+        </Frame>
+        <VerticalStackLayout
+    Grid.Row="0"
+    Padding="20,10"
+    Spacing="5"
+    VerticalOptions="End">
+            <VerticalStackLayout>
+                <Label 
+                        Text="Date"
+                        FontFamily="InterRegular"
+                        FontSize="16"
+                        LineHeight="22"/>
+                <Frame
+                        Padding="8,0">
+                    <DatePicker 
+                            x:Name="date"
+                            FontSize="16"
+                            FontFamily="InterRegular"/>
+                </Frame>
+
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+
+                <Label
+                        Text="Record"
+                        FontFamily="InterRegular"
+                        FontSize="16"
+                        LineHeight="22"/>
+                <Frame
+                        Padding="8,0">
+                    <Entry 
+                            x:Name="record"
+                            Keyboard="Numeric"
+                            FontSize="16"
+                            FontFamily="InterRegular"/>
+                </Frame>
+
+                <FlexLayout
+                    Direction="Row"
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween"
+                    VerticalOptions="Fill"
+                    Margin="0,100,0,0">
+                    <Button 
+                        Text="Cancel"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        BorderWidth="1"
+                        BorderColor="Gray"
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="16"
+                        FontFamily="InterRegular"
+                        FontAttributes="Bold"
+                        HeightRequest="48"
+                        WidthRequest="175"
+                        Clicked="OnCancel"/>
+                    <Button 
+                        Text="Add Reccord"
+                        BackgroundColor="#2A3A53"
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="16"
+                        FontFamily="InterRegular"
+                        FontAttributes="Bold"
+                        HeightRequest="48"
+                        WidthRequest="175"
+                        Clicked="OnSave"/>
+                </FlexLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExLog.About"
+             Title="About">	
+	<Shell.TitleView>
+		<Grid>
+			<Label
+                Text="About"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="White"
+                TextColor="#1668EB"
+                FontFamily="InterSemibold"
+                FontSize="24"
+                LineHeight="30"
+                FontAttributes="Bold"/>
+		</Grid>
+	</Shell.TitleView>
+    <VerticalStackLayout
+		BackgroundColor="#dee5ea"
+		Padding="10,40"
+		Spacing="35">
+		<Image 
+			Source="logo.png"/>
+        <Label 
+			TextType="Html"
+            Text="ExLog is a comprehensive mobile application designed 
+			to empower users in tracking and managing their workout routines effectively. 
+			Whether you're a beginner starting your fitness journey or a seasoned athlete 
+			striving for peak performance, we help you to stay motivated, organized, and 
+			on track towards your fitness goals."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+			HorizontalTextAlignment="Center"
+			FontSize="16"
+			WidthRequest="295"
+			LineBreakMode="TailTruncation"
+			MaxLines="10"
+			LineHeight="22"
+			FontFamily="InterRegular"
+			FontAttributes="Bold"
+			TextColor="#28B6F2"
+			/>
+		<Label Text="Mus'ab Mustaffa | Version 1.0" 
+			   FontSize="16"
+			   LineHeight="22"
+			   HorizontalOptions="Center"
+			   FontFamily="InterRegular"
+			   TextColor="Grey"/>
+    </VerticalStackLayout>
+</ContentPage>

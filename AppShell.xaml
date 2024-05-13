@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ExLog.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ExLog"
+    Shell.FlyoutBehavior="Disabled"
+    Title="ExLog">
+    
+    <TabBar>
+        <Tab
+            Title="Record"
+            Icon="record_icon.png">
+            <ShellContent
+                Title="MainPage"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage"/>
+        </Tab>
+        <Tab
+            Title="About"
+            Icon="about_icon.png"
+            >
+            <ShellContent
+                Title="AboutPage"
+                ContentTemplate="{DataTemplate local:About}"
+                Route="AboutPage"/>
+        </Tab>
+    </TabBar>
+    <ShellContent
+                Title="NewExercise"
+                ContentTemplate="{DataTemplate local:NewExercise}"
+                Route="NewExercise"/>
+
+
+</Shell>
